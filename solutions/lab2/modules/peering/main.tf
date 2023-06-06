@@ -6,6 +6,6 @@ resource "azurerm_virtual_network_peering" "spoke" {
  remote_virtual_network_id = "${var.spoke_vnet_name}"
  allow_virtual_network_access = true
  allow_forwarded_traffic = false
- use_remote_gateways = true
+ use_remote_gateways = false
  allow_gateway_transit = false
 }
