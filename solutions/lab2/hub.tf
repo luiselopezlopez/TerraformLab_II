@@ -9,7 +9,7 @@ module "hub_vnet" {
  source = "./modules/vnet"
 
  name = var.hub_vnet_name
- vnet_address_space = ["10.0.0.0/16"]
+ vnet_address_space = var.hub_vnet_addressspace
  resource_group_name = azurerm_resource_group.hub.name
  location = var.azure_region
 }

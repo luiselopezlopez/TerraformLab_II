@@ -10,6 +10,12 @@ variable "hub_vnet_name" {
  default = "hub"
 }
 
+variable "hub_vnet_addressspace"{
+    description = "Hub vnet address space"
+    type = list
+    default =["10.0.0.0/16"]
+}
+
 variable "hub_subnet_name" {
  description = "The name of the Hub Firewall subnet."
  default = "fw-subnet"
