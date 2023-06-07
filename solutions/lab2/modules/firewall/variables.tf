@@ -18,3 +18,6 @@ variable "fw_subnet_id"{
 variable "fw_public_ip_id" {
     type = string 
 }
+variable "firewall_policy_id" {
+    type = string 
+}

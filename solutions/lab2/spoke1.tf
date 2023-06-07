@@ -26,13 +26,13 @@ module "spoke1_subnet" {
  depends_on = [ module.spoke1_vnet ]
 }
 
-module "spoke1_peering" {
+module "peering-spoke1-hub" {
     source = "./modules/peering"
 
-    name = format ("peering-%s-%s",var.hub_vnet_name,var.spoke1_vnet_name)
-    resource_group_name = azurerm_resource_group.hub.name
-    hub_vnet_name = var.hub_vnet_name
-    spoke_vnet_name = module.spoke1_vnet.id
+    name = format ("peering-%s-%s",var.spoke1_vnet_name,var.hub_vnet_name)
+    resource_group_name = azurerm_resource_group.spoke_1.name
+    local_vnet_name = var.spoke1_vnet_name
+    remote_vnet_id = module.hub_vnet.id
     depends_on = [ module.hub_vnet,module.spoke1_vnet ]
 
 }
