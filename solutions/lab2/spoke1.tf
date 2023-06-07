@@ -68,18 +68,14 @@ module "route_table_association_spoke1_hub" {
 }
 
 
-
-/*
 # Define the Windows virtual machine in spoke 1 virtual network subnet
 module "vm1" {
  source = "./modules/vm"
 
- vm_name = "vm1"
- rg_name = azurerm_resource_group.spoke_1.name
+ name = "vm1"
+ resource_group_name = azurerm_resource_group.spoke_1.name
  location = var.azure_region
- vm_size = var.vm_size
  admin_username = var.admin_username
  admin_password = var.admin_password
  vnet_subnet_id = module.spoke1_subnet.subnet_id
 }
-*/

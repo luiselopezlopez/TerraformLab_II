@@ -53,3 +53,13 @@ module "hub_firewall" {
     azurerm_public_ip.hub_fw_public_ip    
  ]
 }
+
+module "azurerm_firewall_policy" {
+   source= "./modules/firewallPolicy"
+
+   resource_group_name = azurerm_resource_group.hub.name
+   location = var.azure_region
+   depends_on = [ 
+      module.hub_firewall
+   ]
+}
