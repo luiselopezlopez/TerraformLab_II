@@ -1,4 +1,4 @@
-# Necessary input variables for Module Firewall
+# Necessary input variables for Module Peering
 
 variable "resource_group_name" {
     type = string

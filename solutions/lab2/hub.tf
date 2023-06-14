@@ -71,5 +71,4 @@ module "peering-hub-spoke1" {
     local_vnet_name = var.hub_vnet_name
     remote_vnet_id = module.spoke1_vnet.id
     depends_on = [ module.hub_vnet,module.spoke1_vnet ]
-
 }

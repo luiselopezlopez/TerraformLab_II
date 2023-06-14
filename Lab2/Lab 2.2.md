@@ -81,7 +81,7 @@
     }
     ```
 
-    - variables.tv
+    - variables.tf
     ```
     variable "resource_group_name" {
         type = string
@@ -158,4 +158,12 @@
     }    
     ```
 
-
+6. Deploy the terraform into the Azure Subscription
+    ```
+    az login
+    terraform init
+    terraform plan -var-file=".\terraform.tfvars"
+    terraform apply -var-file=".\terraform.tfvars" -auto-approve
+    ```
+    Check the result in Azure.
+    
