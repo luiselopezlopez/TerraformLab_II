@@ -2,13 +2,13 @@
 
 ## Step 1: Create a resource group
 ```
-az group create --name my-tfstate-rg --location eastus
+az group create --name my-tfstate-rg --location northeurope
 ```
-Replace `my-tfstate-rg` with your preferred resource group name and `eastus` with your preferred region.
+Replace `my-tfstate-rg` with your preferred resource group name and `northeurope` with your preferred region.
 
 ## Step 2: Create a storage account
 ```
-az storage account create --name mytfstatestorageaccount --resource-group my-tfstate-rg --location eastus --sku Standard_LRS --kind StorageV2
+az storage account create --name mytfstatestorageaccount --resource-group my-tfstate-rg --location northeurope --sku Standard_LRS --kind StorageV2
 ```
 Replace `mytfstatestorageaccount` with your preferred storage account name.
 
@@ -68,3 +68,5 @@ This will create a `terraform.tfstate` file in your Blob Storage container.
 You can now use the Blob Storage backend to store your Terraform state. When you run `terraform apply`, Terraform will automatically put the state into the Blob Storage container you have specified.
 
 That's it! You have now setup a Blob Storage backend for storing tfstate in your Terraform configuration.
+
+[Back to Index](/README.md)

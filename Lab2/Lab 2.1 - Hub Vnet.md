@@ -1,7 +1,7 @@
 ## Creating Hub Network
 
-1. Copy *backend.tf* from the previous laboratory into the *\terraform* directory.
-2. Create a file called *hub.tf*
+
+1. Create a file called *hub.tf*
     ```
     # Define the hub virtual subnet resource group
     resource "azurerm_resource_group" "hub" {
@@ -31,7 +31,7 @@
     depends_on = [ module.hub_vnet ]
     }
     ```
-3. Create a file called *variables.tf*
+2. Create a file called *variables.tf*
     ```
     variable "azure_region" {
         description = "The Azure region in which to configure the resources."
@@ -54,16 +54,16 @@
         default = "fw-subnet"
     }
     ```
-4. Create a file called *terraform.tfvars* 
+3. Create a file called *terraform.tfvars* 
     ```
     azure_region = "northeurope"
     hub_vnet_name = "hub"
     hub_vnet_addressspace =["10.0.0.0/16"]
     hub_subnet_name = "AzureFirewallSubnet"
     ```
-5. Create a subdirectory called *modules*
-6. Create a subdirectory called *vnet* inside *modules*
-7. Inside the directory *modules\vnet* create 3 files
+4. Create a subdirectory called *modules*
+5. Create a subdirectory called *vnet* inside *modules*
+6. Inside the directory *modules\vnet* create 3 files
     - main.tf
     ```
     resource "azurerm_virtual_network" "vnet" {
@@ -97,8 +97,8 @@
     }
     ```
 
-8. Create a subdirectory called *subnet* inside *modules*
-9. Inside the directory *modules\subnet* create 3 files
+7. Create a subdirectory called *subnet* inside *modules*
+8. Inside the directory *modules\subnet* create 3 files
     - main.tf
     ```
     resource "azurerm_subnet" "subnet" {
@@ -131,7 +131,7 @@
     }
 
     ```
-10. Deploy the terraform into the Azure Subscription
+9. Deploy the terraform into the Azure Subscription
     ```
     az login
     terraform init
@@ -140,3 +140,4 @@
     ```
     Check the result in Azure.
     
+[Back to Index](/README.md)

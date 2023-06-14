@@ -63,3 +63,5 @@
     terraform apply -var-file=".\terraform.tfvars" -auto-approve
     ```
     Check the result in Azure.
+
+[Back to Index](/README.md)

@@ -79,3 +79,20 @@ module "vm1" {
  admin_password = var.admin_password
  vnet_subnet_id = module.spoke1_subnet.subnet_id
 }
+
+module "firewallDnatPolicy"{
+    source ="./modules/firewallDnatPolicy"
+    policy_id= module.hub_firewall_policy.id
+    ruleCollectionName = "InboundAccess"
+    rulePriority = 100
+    destinationAddress = azurerm_public_ip.hub_fw_public_ip.ip_address
+    destinationPorts = ["3389"]
+    ruleName = "RDP"
+    protocol = ["TCP"]
+    sourceAddress = ["*"]
+    translatedAddress = module.vm1.privateIPAddress
+    translatedPort = 3389
+
+    depends_on = [ module.hub_firewall_policy ]
+
+}

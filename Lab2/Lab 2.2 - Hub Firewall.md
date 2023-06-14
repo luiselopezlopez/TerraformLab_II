@@ -23,7 +23,6 @@
         fw_public_ip_id = azurerm_public_ip.hub_fw_public_ip.id
         firewall_policy_id = module.hub_firewall_policy.id
         location = var.azure_region
-        allowed_fw_ports = [var.hub_fw_allow_ports]
         depends_on = [ 
             module.hub_firewall_subnet, 
             azurerm_public_ip.hub_fw_public_ip,
@@ -44,7 +43,6 @@
         description = "The name of the Azure Firewall in the Hub VNet."
         default = "FW-HUB"
     }
-
     variable "hub_fw_public_ip_name" {
         description = "The name of the public IP address for the Hub VNet Azure Firewall."
         default = "fw-public-ip"
@@ -91,9 +89,6 @@
     }
     variable "location" {
         type = string
-    }
-    variable "allowed_fw_ports" {
-        type = list
     }
     variable "fw_subnet_id"{
         type = string
@@ -167,3 +162,4 @@
     ```
     Check the result in Azure.
     
+[Back to Index](/README.md)

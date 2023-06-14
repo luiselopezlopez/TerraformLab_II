@@ -70,7 +70,13 @@
             type = string
         }
         ```
-    
+    - **output.tf**
+        ```
+        output "privateIPAddress" {
+            value = azurerm_windows_virtual_machine.vm.private_ip_address
+        }
+        ```
+
 2. In ***spoke.tf*** add
     ```
     module "vm1" {
@@ -117,4 +123,7 @@
     terraform apply -var-file=".\terraform.tfvars" -auto-approve
     ```
     Check the result in Azure.
+
+[Back to Index](/README.md)
+
     

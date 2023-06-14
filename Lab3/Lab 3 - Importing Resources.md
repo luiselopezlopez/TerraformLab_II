@@ -25,5 +25,5 @@ Extract the zip file in an accesible place, for example **'C:\aztfexport'**. Opt
 
 5. Open the generated main.tf file and observe the differences against the original file.
 
-
+[Back to Index](/README.md)
 
